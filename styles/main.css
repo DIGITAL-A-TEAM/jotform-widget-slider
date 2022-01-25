@@ -1,0 +1,54 @@
+body {
+    overflow-x: hidden;
+}
+
+input[type="range"] {
+    width: 98%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background-color: rgb(230 230 230);
+    border-radius: 10px;
+    height: 5px;
+}
+
+.values {
+    width: 98%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.values>span {
+    padding: 10px;
+}
+
+#minValue {
+    text-align: left;
+}
+
+#maxValue {
+    text-align: right;
+}
+
+#curVal {
+    background-color: #e7e7e7;
+    border-radius: 15px;
+    text-align: center;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #757575;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: 180ms;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    width: 20px;
+    height: 20px;
+}
