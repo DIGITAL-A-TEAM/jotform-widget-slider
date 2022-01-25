@@ -9,7 +9,7 @@ This widget allows you create a range input field, change colors and description
 2. Go to your *Features* > *Form Widgets* > *Create New Widget*
 3. Add following parameters:
 ![image](https://user-images.githubusercontent.com/24431825/150976065-e45d229f-1f54-485a-8230-8100cce476c9.png)
-4. Add the new widget to a from
+4. Add the new widget to a form
 
 
 ## Contribute
