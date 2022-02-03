@@ -14,7 +14,7 @@ This widget allows you create a range input field, change colors and description
 
 ## Contribute
 You can contribute with GitHub via Pull Request on this project and we will review and add you changes.
-For more information, please read the [LICENCE.md](https://github.com/Digital-A-TEAM/jotform-widget-image-picker/blob/main/LICENCE.md)
+For more information, please read the [LICENCE](https://github.com/Digital-A-TEAM/jotform-widget-slider/blob/main/README.md)
 
 ## Issues and Errors
 If you have any problems, errors or feature request, tell  us through the [Issues](https://github.com/Digital-A-TEAM/jotform-widget-image-picker/issues). 
