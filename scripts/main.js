@@ -37,7 +37,13 @@ JFCustomWidget.subscribe("ready", function () {
 
     label != '' ? document.getElementById('label').innerHTML = label : document.getElementById('label').innerHTML = '';
     jotformSettings.minValue != '' ? document.getElementById('dat-slider').min = parseFloat(jotformSettings.minValue.trim()) : document.getElementById('dat-slider').min = 0;
-    jotformSettings.maxValue != '' ? document.getElementById('dat-slider').max = parseFloat(jotformSettings.maxValue.trim()) : document.getElementById('dat-slider').max = 100;
+    
+    if (jotformSettings.currentYear == 'yes') {
+        document.getElementById('dat-slider').max = new Date().getFullYear(); 
+    }
+    else {
+        jotformSettings.maxValue != '' ? document.getElementById('dat-slider').max = parseFloat(jotformSettings.maxValue.trim()) : document.getElementById('dat-slider').max = 100;
+    }
     jotformSettings.stepLength != '' ? document.getElementById('dat-slider').step = parseFloat(jotformSettings.stepLength.trim()) : document.getElementById('dat-slider').step = 10;
     jotformSettings.defaultValue != '' ? document.getElementById('dat-slider').value = parseFloat(jotformSettings.defaultValue.trim()) : document.getElementById('dat-slider').value = 50;
     if (jotformSettings.color != '') {
