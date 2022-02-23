@@ -1,5 +1,23 @@
+
+function formatVal(number) {
+    number = '' + parseFloat(number);
+    if (number.length > 3) {
+        let mod = number.length % 3;
+        let output = (mod > 0 ? (number.substring(0,mod)) : '');
+        for (i=0 ; i < Math.floor(number.length / 3); i++) {
+            if ((mod == 0) && (i == 0))
+                output += number.substring(mod+ 3 * i, mod + 3 * i + 3);
+            else
+                output+= '.' + number.substring(mod + 3 * i, mod + 3 * i + 3);
+        }
+        return (output);
+    }
+    else 
+        return number;
+}
+
 function showVal(value, valueUnit) {
-    document.getElementById("curVal").innerHTML = value + ' ' + valueUnit;
+    document.getElementById("curVal").innerHTML = formatVal(value) + ' ' + valueUnit;
 }
 
 JFCustomWidget.subscribe("ready", function () {
@@ -31,8 +49,8 @@ JFCustomWidget.subscribe("ready", function () {
         style.innerHTML = ".range::-webkit-slider-thumb { background: " + jotformSettings.colorThumb + " !important; }";
     }
 
-    document.getElementById('minValue').innerHTML = jotformSettings.minValue.trim() + ' ' + valueUnit;
-    document.getElementById('maxValue').innerHTML = jotformSettings.maxValue.trim() + ' ' + valueUnit;
+    document.getElementById('minValue').innerHTML = formatVal(jotformSettings.minValue.trim()) + ' ' + valueUnit;
+    document.getElementById('maxValue').innerHTML = formatVal(jotformSettings.maxValue.trim()) + ' ' + valueUnit;
 
     JFCustomWidget.subscribe("submit", function () {
 
