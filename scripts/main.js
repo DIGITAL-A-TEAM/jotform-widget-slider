@@ -30,7 +30,7 @@ JFCustomWidget.subscribe("ready", function () {
     else {
         valueUnit = jotformSettings.unit;
     }
-    document.getElementById("curVal").innerHTML = jotformSettings.defaultValue.trim() + ' ' + valueUnit;
+    document.getElementById("curVal").innerHTML = formatVal(jotformSettings.defaultValue.trim()) + ' ' + valueUnit;
     // console.log(label);
     document.getElementById('dat-slider').addEventListener('change', () => { showVal(document.getElementById('dat-slider').value, valueUnit) });
     document.getElementById('dat-slider').addEventListener('input', () => { showVal(document.getElementById('dat-slider').value, valueUnit) });
