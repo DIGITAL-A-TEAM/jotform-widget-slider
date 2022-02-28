@@ -9,7 +9,7 @@ function formatVal(number, format) {
                 if ((mod == 0) && (i == 0))
                     output += number.substring(mod + 3 * i, mod + 3 * i + 3);
                 else
-                    output+= '.' + number.substring(mod + 3 * i, mod + 3 * i + 3);
+                    output += '.' + number.substring(mod + 3 * i, mod + 3 * i + 3);
             }
             return (output);
         }
