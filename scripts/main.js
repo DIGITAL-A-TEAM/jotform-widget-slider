@@ -21,7 +21,7 @@ function formatVal(number, format) {
 }
 
 function showVal(value, valueUnit, format) {
-    document.getElementById("curVal").innerHTML = formatVal(value, format) + ' ' + valueUnit;
+    document.getElementById("curVal").innerText = formatVal(value, format) + ' ' + valueUnit;
 }
 
 JFCustomWidget.subscribe("ready", function () {
