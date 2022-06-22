@@ -34,12 +34,12 @@ JFCustomWidget.subscribe("ready", function () {
     else {
         valueUnit = jotformSettings.unit;
     }
-    document.getElementById("curVal").innerHTML = formatVal(jotformSettings.defaultValue.trim(), jotformSettings.format) + ' ' + valueUnit;
+    document.getElementById("curVal").innerText = formatVal(jotformSettings.defaultValue.trim(), jotformSettings.format) + ' ' + valueUnit;
     // console.log(label);
     document.getElementById('dat-slider').addEventListener('change', () => { showVal(document.getElementById('dat-slider').value, valueUnit, jotformSettings.format) });
     document.getElementById('dat-slider').addEventListener('input', () => { showVal(document.getElementById('dat-slider').value, valueUnit, jotformSettings.format) });
 
-    label != '' ? document.getElementById('label').innerHTML = label : document.getElementById('label').innerHTML = '';
+    label != '' ? document.getElementById('label').innerText = label : document.getElementById('label').innerText = '';
     jotformSettings.minValue != '' ? document.getElementById('dat-slider').min = parseFloat(jotformSettings.minValue.trim()) : document.getElementById('dat-slider').min = 0;
     
     jotformSettings.maxValue != '' ? document.getElementById('dat-slider').max = parseFloat(jotformSettings.maxValue.trim()) : document.getElementById('dat-slider').max = 100;
@@ -51,15 +51,15 @@ JFCustomWidget.subscribe("ready", function () {
 
     if (jotformSettings.colorThumb != '') {
         let style = document.querySelector('[data="range"]');
-        style.innerHTML = ".range::-webkit-slider-thumb { background: " + jotformSettings.colorThumb + " !important; }";
+        style.innerText = ".range::-webkit-slider-thumb { background: " + jotformSettings.colorThumb + " !important; }";
     }
 
-    document.getElementById('minValue').innerHTML = formatVal(jotformSettings.minValue.trim(), jotformSettings.format) + ' ' + valueUnit;
+    document.getElementById('minValue').innerText = formatVal(jotformSettings.minValue.trim(), jotformSettings.format) + ' ' + valueUnit;
     if (jotformSettings.format == 'current year') {
-        document.getElementById('maxValue').innerHTML = new Date().getFullYear(); 
+        document.getElementById('maxValue').innerText = new Date().getFullYear(); 
     }
     else {
-        document.getElementById('maxValue').innerHTML = formatVal(jotformSettings.maxValue.trim(), jotformSettings.format) + ' ' + valueUnit;
+        document.getElementById('maxValue').innerText = formatVal(jotformSettings.maxValue.trim(), jotformSettings.format) + ' ' + valueUnit;
     }
     JFCustomWidget.subscribe("submit", function () {
 
