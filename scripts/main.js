@@ -22,6 +22,8 @@ function formatVal(number, format) {
 
 function showVal(value, valueUnit, format) {
     document.getElementById("curVal").innerText = formatVal(value, format) + ' ' + valueUnit;
+    JFCustomWidget.sendData({ valid: true, value: document.getElementById('dat-slider').value });
+    console.log("seend data");
 }
 
 JFCustomWidget.subscribe("ready", function () {
