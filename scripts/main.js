@@ -67,6 +67,7 @@ JFCustomWidget.subscribe("ready", function () {
             valid: true,
             value: document.getElementById('dat-slider').value
         }
+        console.log(msg);
         JFCustomWidget.sendSubmit(msg);
     });
 });
