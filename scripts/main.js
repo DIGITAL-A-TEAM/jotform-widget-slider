@@ -46,6 +46,8 @@ JFCustomWidget.subscribe("ready", function () {
     jotformSettings.maxValue != '' ? document.getElementById('dat-slider').max = parseFloat(jotformSettings.maxValue.trim()) : document.getElementById('dat-slider').max = 100;
     jotformSettings.stepLength != '' ? document.getElementById('dat-slider').step = parseFloat(jotformSettings.stepLength.trim()) : document.getElementById('dat-slider').step = 10;
     jotformSettings.defaultValue != '' ? document.getElementById('dat-slider').value = parseFloat(jotformSettings.defaultValue.trim()) : document.getElementById('dat-slider').value = 50;
+    
+    
     if (jotformSettings.color != '') {
         document.getElementById('dat-slider').style.backgroundColor = jotformSettings.color;
     }
@@ -62,6 +64,7 @@ JFCustomWidget.subscribe("ready", function () {
     else {
         document.getElementById('maxValue').innerText = formatVal(jotformSettings.maxValue.trim(), jotformSettings.format) + ' ' + valueUnit;
     }
+    JFCustomWidget.sendData({ valid: true, value: document.getElementById('dat-slider').value });
     JFCustomWidget.subscribe("submit", function () {
 
         let msg = {
