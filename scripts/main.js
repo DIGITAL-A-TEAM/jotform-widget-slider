@@ -29,7 +29,7 @@ JFCustomWidget.subscribe("ready", function () {
     let jotformSettings = JFCustomWidget.getWidgetSettings();
     let valueUnit;
     let label = JFCustomWidget.getWidgetSetting('QuestionLabel');
-    let description = JFCustomWidget.getWidgetSetting('description');
+    let description = JFCustomWidget.getWidgetSetting('desc');
     if (jotformSettings.unit == null || jotformSettings.unit == undefined) {
         valueUnit = ' ';
     }
