@@ -29,6 +29,7 @@ JFCustomWidget.subscribe("ready", function () {
     let jotformSettings = JFCustomWidget.getWidgetSettings();
     let valueUnit;
     let label = JFCustomWidget.getWidgetSetting('QuestionLabel');
+    let description = JFCustomWidget.getWidgetSetting('description');
     if (jotformSettings.unit == null || jotformSettings.unit == undefined) {
         valueUnit = ' ';
     }
@@ -41,6 +42,7 @@ JFCustomWidget.subscribe("ready", function () {
     document.getElementById('dat-slider').addEventListener('input', () => { showVal(document.getElementById('dat-slider').value, valueUnit, jotformSettings.format) });
 
     label != '' ? document.getElementById('label').innerText = label : document.getElementById('label').innerText = '';
+    description != '' ? document.getElementById('description').innerText = description : document.getElementById('description').innerText = '';
     jotformSettings.minValue != '' ? document.getElementById('dat-slider').min = parseFloat(jotformSettings.minValue.trim()) : document.getElementById('dat-slider').min = 0;
     
     jotformSettings.maxValue != '' ? document.getElementById('dat-slider').max = parseFloat(jotformSettings.maxValue.trim()) : document.getElementById('dat-slider').max = 100;
