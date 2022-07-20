@@ -61,7 +61,9 @@ JFCustomWidget.subscribe("ready", function () {
 
     document.getElementById('minValue').innerText = formatVal(jotformSettings.minValue.trim(), jotformSettings.format) + ' ' + valueUnit;
     if (jotformSettings.format == 'current year') {
-        document.getElementById('maxValue').innerText = new Date().getFullYear(); 
+        jotformSettings.maxValue = new Date().getFullYear();
+        document.getElementById('dat-slider').max = jotformSettings.maxValue;
+        document.getElementById('maxValue').innerText = jotformSettings.maxValue;  
     }
     else {
         document.getElementById('maxValue').innerText = formatVal(jotformSettings.maxValue.trim(), jotformSettings.format) + ' ' + valueUnit;
