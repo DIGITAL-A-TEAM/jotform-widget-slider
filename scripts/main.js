@@ -62,6 +62,7 @@ JFCustomWidget.subscribe("ready", function () {
     document.getElementById('minValue').innerText = formatVal(jotformSettings.minValue.trim(), jotformSettings.format) + ' ' + valueUnit;
     if (jotformSettings.format == 'current year') {
         jotformSettings.maxValue = new Date().getFullYear();
+        document.getElementById('dat-slider').max = jotformSettings.maxValue;
         document.getElementById('maxValue').innerText = jotformSettings.maxValue;  
     }
     else {
