@@ -68,7 +68,6 @@ JFCustomWidget.subscribe("ready", function () {
     else {
         document.getElementById('maxValue').innerText = formatVal(jotformSettings.maxValue.trim(), jotformSettings.format) + ' ' + valueUnit;
     }
-    JFCustomWidget.requestFrameResize({width: document.body.clientWidth, height: document.body.clientHeight})
     JFCustomWidget.sendData({ valid: true, value: document.getElementById('dat-slider').value });
     JFCustomWidget.subscribe("submit", function () {
 
@@ -78,4 +77,5 @@ JFCustomWidget.subscribe("ready", function () {
         }
         JFCustomWidget.sendSubmit(msg);
     });
+    JFCustomWidget.requestFrameResize({width: document.body.clientWidth, height:  window.innerHeight})
 });
